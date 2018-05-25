@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
+
     public function pages()
     {
         return $this->belongsToMany('Vendor\tcg\voyager\src\Models\Page');
@@ -15,4 +16,6 @@ class Invoice extends Model
     {
         return $this->hasMany('App\InvoiceItem');
     }
+
+    
 }
