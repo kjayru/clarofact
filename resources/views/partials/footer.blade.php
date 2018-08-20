@@ -2,7 +2,7 @@
         <footer class="footer">
             <div class="limit">
                 <p class="footer__logo">
-                    <img src="img/claro.svg" alt="" />
+                    <img src="/img/claro.svg" alt="" />
                     Todos los derechos reservados, Claro 2018
                 </p>
                 <ul class="footer__lista">
@@ -15,9 +15,15 @@
             </div>
         </footer>
 
-        <script src="js/vendor/jquery.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/js/vendor/jquery.js"></script>
+        <script src="/js/plugins.js"></script>
+
+        @desktop 
+        <script src="/js/main.js?v={{date('mdhms')}}"></script>
+        @enddesktop
+        @handheld
+        <script src="/js/main-mobile.js?v={{date('mdhms')}}"></script>
+        @endhandheld
         
     </body>
 </html>

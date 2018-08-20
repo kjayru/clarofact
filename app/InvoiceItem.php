@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class InvoiceItem extends Model
 {
     
-    public function Positions()
+    public function positions()
     {
         return $this->hasMany('App\Position');
     }

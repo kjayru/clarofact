@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Page;
+use App\Slider;
+use App\Configuration;
 class LandingController extends Controller
 {
     public function show()
     {
-        return view('landing.index');
+        $configure = Configuration::first();
+        
+        $page = Page::findBySlug('inicio');
+        $slider = Slider::where('name','Slider Home')->with('slideritems')->get();
+     
+        return view('landing.index',['page'=>$page,'slider'=>$slider,'configure'=>$configure]);
     }
 }

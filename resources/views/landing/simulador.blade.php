@@ -8,11 +8,11 @@
 <section class="pagina">
 
     <ul class="pagina__breadcrumb limit">
-        <li><a href="index.html">Inicio</a></li>/
+        <li><a href="/">Inicio</a></li>/
         <li>Simulador de periodo de facturación</li>
     </ul>
     <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
-        <li><a href="index.html">Inicio</a></li>/
+        <li><a href="/">Inicio</a></li>/
         <li>Simulador de periodo de facturación</li>
     </ul>
     
@@ -70,4 +70,25 @@
 
 <div class="puntoFooter"></div>
 
+<div id="box__facturacion" class="box">
+    <div class="box__table">
+        <div class="box__table__cell">
+            <div class="box__contenido">
+                <img src="img/factura.jpg" alt="">
+                <div class="box__cerrar">x</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="box__errorCiclo" class="box">
+    <div class="box__table">
+        <div class="box__table__cell">
+            <div class="box__contenido box__contenido--novalido">
+                <div class="box__contenido__novalido">Periodo no válido</div>
+                <div class="box__cerrar">x</div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

@@ -14,14 +14,24 @@
         <meta property="og:description" content="" />
         <meta property="og:image" content="" />
     
-        <link rel="shortcut icon" href="favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/site.css?v=2">
-        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+        <link rel="stylesheet" href="/css/normalize.css">
+        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/site.css?v={{ date('Mdhms') }}">
+        <link rel="stylesheet" href="/css/site-mobile.css?v={{ date('Mdhms') }}">
+        <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41368265-9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+     
+      gtag('config', 'UA-41368265-9');
+    </script>
     </head>
     <body>
         
@@ -33,8 +43,8 @@
                         <div></div>
                         <div></div>
                     </div>
-                    <h1 class="header__h1"><img src="img/claro.svg" alt="Claro" /></h1>
-                    <a href="#" class="volverPagina"><img src="img/fecha-izquierda-blanco-icono.svg" alt="">Atrás</a>
+                    <h1 class="header__h1"><img src="/img/claro.svg" alt="Claro" /></h1>
+                    <a href="#" class="volverPagina"><img src="/img/fecha-izquierda-blanco-icono.svg" alt="">Atrás</a>
                     <div class="clear"></div>
                 </div>
             </div>

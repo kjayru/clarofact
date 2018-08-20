@@ -203,11 +203,15 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        //'css/custom.css',
+        'css/mainback.css',
+        '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css',
     ],
 
     'additional_js' => [
         //'js/custom.js',
+        'js/mainback.js?v='.date('dmhs'),
+        '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js',
+       
     ],
 
     'googlemaps' => [
