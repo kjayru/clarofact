@@ -22,7 +22,7 @@
                 <ul class="dominaturecibo__opciones">
                 @foreach($recibos as $key => $recibo)
                     
-                    <li><a href="/conoce-tu-recibo/{{ $recibo->slug }}" 
+                    <li><a href="/{{ $path }}/{{ $recibo->slug }}" 
                         @if($recibo->slug== $pag)
                         class="act"
                         @endif
