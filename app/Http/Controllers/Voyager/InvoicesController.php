@@ -333,7 +333,7 @@ class InvoicesController extends VoyagerBaseController
 
         
         $layers = Layer::where('invoice_item_id',$id)->get();
-
+       
         return view('vendor.voyager.invoices.implement',['invoice_id'=>$id,'points'=>$positions,'layers'=>$layers,'items'=>$items]);
     
     }
@@ -413,5 +413,16 @@ class InvoicesController extends VoyagerBaseController
         $recibo->pages()->attach($request->page_id);
         return response()->json(['recibo'=>$recibo]);
 
+    }
+
+    public function borrarpunto($id){
+        $punto = Position::find($id);
+        $punto->delete();
+        response()->json(['rpta'=>'ok']);
+    }
+    public function borrarcapa($id){
+        $capa = Layer::find($id);
+        $capa->delete();
+        response()->json(['rpta'=>'ok']);
     }
 }

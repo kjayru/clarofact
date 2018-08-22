@@ -5,7 +5,7 @@
 <div class="espacioHeader"></div>
         <section class="pagina">
                
-         @if($elementos==2)
+         
             <ul class="pagina__breadcrumb limit">
                 <li><a href="/">Inicio</a></li>/
                 <li><a href="/{{$path1->slug}}">{{$path1->name }}</a></li>/
@@ -17,22 +17,9 @@
              
                 <li>{{ $path2->name  }}</li>
             </ul>
-        @endif
+       
 
-        @if($elementos>=3)
-            <ul class="pagina__breadcrumb limit">
-                <li><a href="/">Inicio</a></li>/
-                <li><a href="/{{$path1->slug}}">{{$path1->name }}</a></li>/
-                <li><a href="/{{$path1->slug}}/{{$path2->slug}}">{{$path2->name }}</a></li>/
-                <li>{{ $path3->name  }}</li>
-            </ul>
-            <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
-                    <li><a href="/">Inicio</a></li>/
-                    <li><a href="/{{$path1->slug}}">{{$path1->name }}</a></li>/
-                    <li><a href="/{{$path1->slug}}/{{$path2->slug}}">{{$path2->name }}</a></li>/
-                    <li>{{ $path3->name  }}</li>
-                </ul>
-        @endif
+       
 
             <h2 class="pagina__titulo pagina__titulo--miclaro">Conoce tu recibo móvil</h2>
             

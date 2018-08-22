@@ -7,11 +7,13 @@
 				<section class="pagina pagina--limitedeconsumo">
 
 						<ul class="pagina__breadcrumb limit">
-								<li><a href="dudas-sobre-tu-facturacion.html">¿Dudas sobre tu facturación?</a></li>/
+								<li><a href="/">Inicio</a></li>/
+								<li><a href="/dudas-sobre-tu-facturacion">¿Dudas sobre tu facturación?</a></li>/
 								<li>Me facturaron más de la cuenta ¿Por qué?</li>
 						</ul>
 						<ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
-								<li><a href="dudas-sobre-tu-facturacion.html">¿Dudas sobre tu facturación?</a></li>/
+								<li><a href="/">Inicio</a></li>/
+								<li><a href="/dudas-sobre-tu-facturacion">¿Dudas sobre tu facturación?</a></li>/
 								<li>Me facturaron más de la cuenta ¿Por qué?</li>
 						</ul>
 

@@ -217,6 +217,22 @@ $(document).ready(function() {
     }
 
 
+    $(".borrar-punto").click(function(e){
+        e.preventDefault();
+        let id = $(this).data('id');
+        let method  = "DELETE";
+        let token = $("#token").val();
+        $.ajax({
+            url:`/admin/invoice-items/implement/punto/${id}`,
+            type:'POST',
+            dataType:'json',
+            data:({'id':id,'_method':method,'_token':token}),
+            success:function(response){
+                $(this).parent('div').remove();
+                console.log($(this));
+            }
+        });
+    });
 });
 
 

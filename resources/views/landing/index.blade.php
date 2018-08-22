@@ -17,7 +17,7 @@
                 </article>
                 <aside class="sliderPrincipal__texto--mobile">
                     <strong>{{ $sli->slideritems[$k]->title }} </strong><br>
-                    <a href="/conoce-tu-recibo">{{ strip_tags($sli->slideritems[$k]->content) }}</a>
+                    <a href="#">{{ strip_tags($sli->slideritems[$k]->content) }}</a>
                 </aside>
             </div>
         </section>

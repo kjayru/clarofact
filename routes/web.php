@@ -1,7 +1,7 @@
 <?php
 Route::get('/','LandingController@show');
-//Route::get('/conoce-tu-recibo','ConoceController@index');
-//Route::get('/conoce-tu-recibo/{slug}','ConoceController@show');
+Route::get('/conoce-tu-recibo','ConoceController@index');
+Route::get('/conoce-tu-recibo/{slug}','ConoceController@show');
 
 Route::get('/que-te-paso-este-mes','QuetepasoController@index');
 Route::get('/que-te-paso-este-mes/{slug}', 'QuetepasoController@show');
@@ -15,7 +15,8 @@ Route::get('/dudas-y-preguntas-frecuentes','PreguntasController@index');
 Route::get('/lugares-de-pago/bancos/{slug}','LugaresController@show');
 Route::get('/lugares-de-pago/{slug}','LugaresController@bancos');
 
-Route::get('/linea-nueva-postpago','PostpagoController@lineaNueva');
+Route::get('/linea-nueva-postpago','LandingController@lineanueva');
+
 
 
 
@@ -26,7 +27,8 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     Route::get('invoice-items/implement/{id}','Voyager\InvoicesController@implement');
-    
+    Route::delete('invoice-items/implement/punto/{id}','Voyager\InvoicesController@borrarpunto');
+    Route::delete('invoice-items/implement/layer/{id}','Voyager\InvoicesController@borrarcapa');
     Route::get('setpoints','Voyager\InvoicesController@setpoints');
     Route::post('setpoints','Voyager\InvoicesController@setpoints');
 

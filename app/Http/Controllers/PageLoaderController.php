@@ -26,52 +26,112 @@ class PageLoaderController extends Controller
                 for($i = 0; $i <= $countSeg; $i++)
                 {
                     
-                    
+                   
                     if($i==$countSeg){
-                  
-                        $parent = Category::where('slug',$categories[$i-1])->first();                
-                        $parent_id = $parent->id;
-                  
-                        $categorias = Category::where('parent_id',$parent_id)->orderby('order','asc')->get();
+                        //paginas de 2 nivel
+                     
+                        $existe = Category::where('slug',$categories[$i-1])->count();                
                         
-                        if(count($categorias)>0){
+                       
+                        if($existe>0){
+                            $parent = Category::where('slug',$categories[$i-1])->first();  
+                            $parent_id = $parent->id;
+                            $categorias = Category::where('parent_id',$parent_id)->orderby('order','asc')->get();
 
-                            switch($countSeg){
-                                case 1: 
-                                 return view('landing.dudas',['categorias'=>$categorias,'path'=>$path]);
-                                break;
+                            if(count($categorias)>0){
 
-                                case 2:
-                                return view('landing.dudas2',['categorias'=>$categorias,'path'=>$path]);
-                                break;
+                                switch($countSeg){
+                                    case 1: 
+                                    return view('landing.dudas',['categorias'=>$categorias,'path'=>$path]);
+                                    break;
 
-                                case 3:
-                                return view('landing.dudas3',['categorias'=>$categorias,'path'=>$path]);
-                                break;
-                            }
-                           
-                         
-                        }else{
+                                    case 2:
+                                    return view('landing.dudas2',['categorias'=>$categorias,'path'=>$path]);
+                                    break;
 
-                           
-                            $datos = CategoryPage::where('category_id',$parent_id)->first();
-                            $category_id = $datos->category_id;
-                            $configure = Configuration::first();
-                      
-                            $recibo = Invoice::where('category_id',$category_id)->first();
-                            $recibos = Invoice::where('category_id',$category_id)->get();
-                            $invoices = InvoiceItem::where('invoice_id',$recibo->id)->with('positions','layers')->get();
-                            $path = $categories[0].'/'.$categories[1].'/'.$categories[2];
-                            $titulo = 'Hoja 1';
-                            $pag= 'hoja-1';
-                            return view('landing.'.$datos->template,['path'=>$path,'datos'=>$datos,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
-
+                                    case 3:
+                                    return view('landing.dudas3',['categorias'=>$categorias,'path'=>$path]);
+                                    break;
+                                }
                             
+                            
+                            }else{
+                                //vista inicial recibo
+                                    @$path1 = Category::where('slug',$categories[0])->first();
+                                    @$path2 = Category::where('slug',$categories[1])->first();
+                                    @$path3 = Category::where('slug',$categories[2])->first();
+
+                                switch($countSeg){
+                                    case 2: 
+                                        $path = $categories[0].'/'.$categories[1];
+                                        
+                                    break;
+                                    
+                                    case 3:
+                                        $path = $categories[0].'/'.$categories[1].'/'.$categories[2];
+                                        
+
+                                    break;
+                                }
+                                
+                                    $datos = CategoryPage::where('category_id',$parent_id)->first();
+                                    $category_id = $datos->category_id;
+                                    $configure = Configuration::first();
+                            
+                                    $recibo = Invoice::where('category_id',$category_id)->first();
+                                    $recibos = Invoice::where('category_id',$category_id)->get();
+                                    
+                                    $invoices = InvoiceItem::where([['invoice_id','=',$recibo->id]])->with('positions','layers')->get();
+                                    
+                                    
+                                    
+                                    $titulo = 'Hoja 1';
+                                    $pag= 'hoja-1';
+                                    return view('landing.'.$datos->template,['elementos'=>$countSeg,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'datos'=>$datos,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+
+                                    
+                            }
+                        }else{
+                            ///slug segundo nivle
+                                @$path1 = Category::where('slug',$categories[0])->first();
+                                @$path2 = Category::where('slug',$categories[1])->first();
+                                @$path3 = Category::where('slug',$categories[2])->first();
+
+                                $configure = Configuration::first();
+
+                                
+                                $parent = Category::where('slug',$categories[1])->first();  
+                            
+                                $parent_id = $parent->id;
+                
+                                $datos = CategoryPage::where('category_id',$parent_id)->first();
+                                $category_id = $datos->category_id;
+
+
+                                $slugrecibo = $categories[2];
+                               
+                                $recibo = Invoice::where([['slug','=',$slugrecibo],['category_id','=',$category_id]])->first();
+                                
+                                $recibos = Invoice::where('category_id',$category_id)->get();
+                                $invoices = InvoiceItem::where('invoice_id',$recibo->id)->with('positions','layers')->get();
+                        
+                                $ppurl = explode("/",$_SERVER['REQUEST_URI']);
+                                $pag= $ppurl[2];
+
+                                $titulo = $recibo->name;
+                                
+                                $path = $categories[0].'/'.$categories[1];
+                                return view('landing.'.$datos->template,['path'=>$path,'elementos'=>$countSeg,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+                                        
                         }
+
                     }
                 }
             }else{
-
+                //vista recibos
+                @$path1 = Category::where('slug',$categories[0])->first();
+                @$path2 = Category::where('slug',$categories[1])->first();
+                @$path3 = Category::where('slug',$categories[2])->first();
 
                 $configure = Configuration::first();
 
@@ -93,13 +153,13 @@ class PageLoaderController extends Controller
                 $recibos = Invoice::where('category_id',$category_id)->get();
                 $invoices = InvoiceItem::where('invoice_id',$recibo->id)->with('positions','layers')->get();
         
-        $ppurl = explode("/",$_SERVER['REQUEST_URI']);
-        $pag= $ppurl[2];
-        $titulo = $recibo->name;
-
-        $path = $categories[0].'/'.$categories[1].'/'.$categories[2];
-        return view('landing.'.$datos->template,['path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+                $ppurl = explode("/",$_SERVER['REQUEST_URI']);
+                $pag= $ppurl[2];
+                $titulo = $recibo->name;
                 
+                $path = $categories[0].'/'.$categories[1].'/'.$categories[2];
+                return view('landing.'.$datos->template,['path'=>$path,'elementos'=>$countSeg,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+                        
                 
             }
           

@@ -47,3 +47,13 @@ div.canvas {
     top: -1px;
     display: inline-block;
 }
+a.borrar-punto, a.borrar-capa {
+    display: inline-block;
+    position: absolute;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    padding: 3px 6px 0 5px;
+    top: -21px;
+    left: -14px;
+}

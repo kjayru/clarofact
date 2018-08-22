@@ -27,7 +27,7 @@ class ConoceController extends Controller
 
         $titulo = 'Hoja 1';
         $pag= 'hoja-1';
-        return view('landing.conoce',['invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+        return view('landing.conoceturecibo',['invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
     }
 
     
@@ -50,7 +50,7 @@ class ConoceController extends Controller
         $ppurl = explode("/",$_SERVER['REQUEST_URI']);
         $pag= $ppurl[2];
         $titulo = $recibo->name;
-        return view('landing.conoce',['invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+        return view('landing.conoceturecibo',['invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
     }
 
    

@@ -17,4 +17,13 @@ class LandingController extends Controller
      
         return view('landing.index',['page'=>$page,'slider'=>$slider,'configure'=>$configure]);
     }
+
+    public function lineanueva(){
+        $configure = Configuration::first();
+        
+        $page = Page::findBySlug('inicio');
+       
+
+        return view('landing.lineanueva',['page'=>$page,'configure'=>$configure]);
+    }
 }

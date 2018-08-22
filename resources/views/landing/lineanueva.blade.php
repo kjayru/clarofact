@@ -11,11 +11,11 @@
 				<section class="pagina pagina--limitedeconsumo">
 
 						<ul class="pagina__breadcrumb limit">
-								<li><a href="index.html">Inicio</a></li>/
+								<li><a href="/">Inicio</a></li>/
 								<li>línea nueva Postpago</li>
 						</ul>
 						<ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
-								<li><a href="index.html">Inicio</a></li>/
+								<li><a href="/">Inicio</a></li>/
 								<li>línea nueva Postpago</li>
 						</ul>
 
