@@ -85,8 +85,17 @@ class PageLoaderController extends Controller
                                     
                                     
                                     
-                                    $titulo = 'Hoja 1';
-                                    $pag= 'hoja-1';
+                                   
+                                    $ppurl = explode("/",$_SERVER['REQUEST_URI']);
+                                        if(!empty($ppurl[4])){
+                                        $pag= $ppurl[4];
+                                    }else{
+                                        $titulo = 'Hoja 1';
+                                        $pag= $recibo->slug;
+                                    }
+                                    
+                                   
+                                    
                                     return view('landing.'.$datos->template,['elementos'=>$countSeg,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'datos'=>$datos,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
 
                                     
@@ -116,12 +125,16 @@ class PageLoaderController extends Controller
                                 $invoices = InvoiceItem::where('invoice_id',$recibo->id)->with('positions','layers')->get();
                         
                                 $ppurl = explode("/",$_SERVER['REQUEST_URI']);
-                                $pag= $ppurl[2];
-
-                                $titulo = $recibo->name;
+                                if(!empty($ppurl[3])){
+                                    $pag= $ppurl[3];
+                                    $titulo = $recibo->name;
+                                    }else{
+                                        $titulo = 'Hoja 1';
+                                        $pag= $recibo->slug;
+                                    }
                                 
                                 $path = $categories[0].'/'.$categories[1];
-                                return view('landing.'.$datos->template,['path'=>$path,'elementos'=>$countSeg,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+                                return view('landing.'.$datos->template,['path'=>$path,'elementos'=>$countSeg,'datos'=>$datos,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
                                         
                         }
 
@@ -154,11 +167,17 @@ class PageLoaderController extends Controller
                 $invoices = InvoiceItem::where('invoice_id',$recibo->id)->with('positions','layers')->get();
         
                 $ppurl = explode("/",$_SERVER['REQUEST_URI']);
-                $pag= $ppurl[2];
+                if(!empty($ppurl[4])){
+                $pag= $ppurl[4];
                 $titulo = $recibo->name;
-                
+                }else{
+                    $titulo = 'Hoja 1';
+                    $pag= $recibo->slug;
+                }
+               
+               
                 $path = $categories[0].'/'.$categories[1].'/'.$categories[2];
-                return view('landing.'.$datos->template,['path'=>$path,'elementos'=>$countSeg,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
+                return view('landing.'.$datos->template,['path'=>$path,'elementos'=>$countSeg,'datos'=>$datos,'path1'=> $path1,'path2'=> $path2,'path3'=> $path3,'path'=>$path,'invoices'=>$invoices,'recibos'=>$recibos,'pag'=>$pag,'titulo'=>$titulo,'configure'=>$configure]);
                         
                 
             }

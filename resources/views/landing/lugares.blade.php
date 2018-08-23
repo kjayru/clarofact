@@ -17,7 +17,7 @@
         <li>Lugares y medios de pago</li>
     </ul>
 
-    <h2 class="pagina__titulo"><img src="/img/deayuda_lugares.svg" alt="" /> Lugares de Pago</h2>
+    <h2 class="pagina__titulo"><img src="/img/deayuda_lugares.png" alt="Lugares de pago" /> Lugares de Pago</h2>
 
     <div class="limit">
         <ul class="lugaresdepago__opciones">

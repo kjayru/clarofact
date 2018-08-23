@@ -730,17 +730,20 @@ img{
 
 .home__quepaso{
     text-align:center;
-    padding:50px 0
+    padding:50px 0;
+    
 }
 .home__quepaso .box_qp1{
     background:#2197ae;
     border:solid 2px #2197ae;
-    border-bottom:solid 2px #0f7689
+    border-bottom:solid 2px #0f7689;
+    display: none !important;
 }
 .home__quepaso .box_qp2{
     background:#f08224;
     border:solid 2px #f08224;
-    border-bottom:solid 2px #cb660f
+    border-bottom:solid 2px #cb660f;
+    display: none !important;
 }
 .home__quepaso .box_qp1,.home__quepaso .box_qp2{
     display:inline-block;
@@ -2139,6 +2142,7 @@ img{
     top:50%;
     left:30px;
     display:none;
+    font-weight: lighter;
     -webkit-transform:translate(0, -50%);
     -ms-transform:translate(0, -50%);
     transform:translate(0, -50%)
@@ -2837,4 +2841,15 @@ img{
     to{
         opacity:1
     }
+}
+.thetitle{
+    text-align:center;
+    font-size:27px;
+}
+.thejustify{
+    text-align:justify;
+    font-size:14px;
+}
+.addtext {
+    padding: 40px;
 }

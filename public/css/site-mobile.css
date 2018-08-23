@@ -61,6 +61,9 @@ a.capsula {
 }
 
 @media(max-width:780px) {
+    .home__quepaso>h3 {
+        margin-top: 50px;
+    }
 	.home__quepaso__glosario {
     width: 90px;
     margin: 0px auto 0;

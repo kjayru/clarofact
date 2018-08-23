@@ -569,3 +569,12 @@ function footer() {
 
     puntoFooter >= footerbottom ? $('.footer').removeClass('footer--bottom') : $('.footer').addClass('footer--bottom');
 }
+
+$(".box_qp1").on('click',function(e){
+    let url =  $(this).data('rel');
+    window.location.href = url;
+ });
+ $(".box_qp2").on('click',function(e){
+    let url =  $(this).data('rel');
+    window.location.href = url;
+ });

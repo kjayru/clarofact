@@ -383,9 +383,6 @@ $(document).on('ready', function() {
         });
     });
 
-
-    
-
 })
 
 function simulacion(dia, mes, year) {

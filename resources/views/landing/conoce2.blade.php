@@ -7,12 +7,12 @@
                
          
             <ul class="pagina__breadcrumb limit">
-                <li><a href="/">Inicio</a></li>/
+               
                 <li><a href="/{{$path1->slug}}">{{$path1->name }}</a></li>/
                 <li>{{ $path2->name  }}</li>
             </ul>
             <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
-                <li><a href="/">Inicio</a></li>/
+               
                 <li><a href="/{{$path1->slug}}">{{$path1->name }}</a></li>/
              
                 <li>{{ $path2->name  }}</li>
@@ -21,7 +21,9 @@
 
        
 
-            <h2 class="pagina__titulo pagina__titulo--miclaro">Conoce tu recibo móvil</h2>
+            <div class="addtext thetitle limit">
+                    {!! @$datos->body !!}
+                 </div>  
             
             <div class="dominaturecibo">
                 <ul class="dominaturecibo__opciones">
@@ -62,7 +64,7 @@
              @endforeach
             <!--mobile seccion -->
             @foreach($invoices as $key => $invoice) 
-                 @if($invoice->mobile==1)
+                 @if($invoice->mobile==2)
                 <div class="hoja hoja{{ $key + 1}} act dominaturecibo__recibo__lista--mobile">
                     <div class="dominaturecibo__contenido">
                       
@@ -89,7 +91,9 @@
                 @endif
             @endforeach
             </div>
-
+            <div class="addtext thejustify limit">
+                    {!! @$datos->body_bottom !!}
+            </div>
         </section>
 
         <div class="puntoFooter"></div>

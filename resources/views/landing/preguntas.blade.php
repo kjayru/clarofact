@@ -15,7 +15,7 @@
         <li>Preguntas frecuentes</li>
     </ul>
 
-    <h2 class="pagina__titulo">Preguntas frecuentes</h2>
+    <h2 class="pagina__titulo">Dudas y preguntas frecuentes</h2>
 
     <div class="limit">
 

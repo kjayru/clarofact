@@ -8,14 +8,12 @@
          
             <ul class="pagina__breadcrumb limit">
                 <li><a href="/">Inicio</a></li>/
-                <li>{{$titulo }}</li>/
-               
+                <li>Conoce tu recibo</li>             
             </ul>
+            
             <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
                 <li><a href="/">Inicio</a></li>/
-                <li><{{$titulo }}</li>/
-             
-               
+                <li>Conoce tu recibo</li>
             </ul>
        
 
@@ -25,18 +23,18 @@
             
             <div class="dominaturecibo">
                 <ul class="dominaturecibo__opciones">
+                    
                 @foreach($recibos as $key => $recibo)
                     
-                    <li><a href="/{{ $path }}/{{ $recibo->slug }}" 
-                        @if($recibo->slug== $pag)
-                        class="act"
-                        @endif
-                        >Hoja {{ $key +1 }}</a></li>
+                    <li>
+                        <a href="/conoce-tu-recibo/{{ $recibo->slug }}" @if($recibo->slug == $pag) class="act" @endif >  Hoja {{ $key +1 }}</a>
+                    </li>
                   
                  @endforeach
                 </ul>
                
             @foreach($invoices as $key => $invoice) 
+            
               @if($invoice->mobile==0)
                 <div class="hoja hoja{{ $key + 1}} act">
                     <div class="dominaturecibo__contenido">
@@ -62,7 +60,7 @@
              @endforeach
             <!--mobile seccion -->
             @foreach($invoices as $key => $invoice) 
-                 @if($invoice->mobile==1)
+                 @if($invoice->mobile==2)
                 <div class="hoja hoja{{ $key + 1}} act dominaturecibo__recibo__lista--mobile">
                     <div class="dominaturecibo__contenido">
                       

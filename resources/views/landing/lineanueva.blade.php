@@ -12,11 +12,11 @@
 
 						<ul class="pagina__breadcrumb limit">
 								<li><a href="/">Inicio</a></li>/
-								<li>línea nueva Postpago</li>
+								<li>Línea nueva Postpago</li>
 						</ul>
 						<ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
 								<li><a href="/">Inicio</a></li>/
-								<li>línea nueva Postpago</li>
+								<li>Línea nueva Postpago</li>
 						</ul>
 
 						<div class="limit">
