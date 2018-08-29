@@ -56,7 +56,7 @@
                         <div class="dominaturecibo__recibo recibo--web">
                                 <img class="dominaturecibo__recibo__imagen" src="/storage/{{ $invoice->imagen }}" alt="">
                                 @foreach($invoice->positions as $k => $pos)
-                                <div class="dominaturecibo__recibo__puntos punto-anime" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;">
+                                <div class="dominaturecibo__recibo__puntos" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;">
                                     <strong class="dominaturecibo__recibo__puntos--abrir act">{{ $pos->order }}</strong>
                                     <strong class="dominaturecibo__recibo__puntos--cerrar">x</strong>
                                     <article class="dominaturecibo__recibo__puntos__contenido">

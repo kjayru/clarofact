@@ -2167,6 +2167,15 @@ img{
     background:#da252c;
     z-index:2
 }
+
+.dominaturecibo__recibo__puntos .punto-anime {
+    -webkit-transition: background ease 0.25s;
+    -o-transition: background ease 0.25s;
+    transition: background ease 0.25s;
+    animation: puntoanime 2s infinite linear;
+    -webkit-animation: puntoanime 2s infinite linear;
+  }
+  
 @-webkit-keyframes puntoanime{
     0%{
         -webkit-transform:scale(0.9)

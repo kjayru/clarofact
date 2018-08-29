@@ -357,6 +357,16 @@ $(document).on('ready', function() {
             }
         });
 
+    $(document).on('click','.dominaturecibo__recibo__puntos--abrir',function(){
+       
+        $(this).parent().removeClass('punto-anime');
+        stopAnimation($(this).parent());
+    });
+
+    $(document).on('click','.dominaturecibo__recibo__puntos--cerrar',function(){
+        $(this).parent("div").addClass('punto-anime');
+        activeAnimation($(this).parent());
+    });
 
     $('.dominaturecibo__opciones a').on('click', function(event) {
         // event.preventDefault();
@@ -549,3 +559,21 @@ box2.addEventListener('click',function(){
     let url =  box2.dataset.rel;
     window.location.href = url;
  });
+
+ function stopAnimation(element)
+{
+    $(element).css("-webkit-animation", "none");
+    $(element).css("-moz-animation", "none");
+    $(element).css("-ms-animation", "none");
+    $(element).css("animation", "none");
+}
+
+function activeAnimation(element)
+{
+    $(element).css("-webkit-transitio", "background ease 0.25s");
+    $(element).css("-o-transitio", "background ease 0.25s");
+    $(element).css("transition", "background ease 0.25s");
+    $(element).css("animation", "background ease 0.25s");
+    $(element).css("animation", "puntoanime 2s infinite linear");
+    $(element).css("-webkit-animation", "puntoanime 2s infinite linear");
+}

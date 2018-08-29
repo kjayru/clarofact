@@ -41,8 +41,8 @@
                         <div class="dominaturecibo__recibo recibo--web">
                                 <img class="dominaturecibo__recibo__imagen" src="/storage/{{ $invoice->imagen }}" alt="">
                                 @foreach($invoice->positions as $k => $pos)
-                                <div class="dominaturecibo__recibo__puntos" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;">
-                                    <strong class="dominaturecibo__recibo__puntos--abrir act">{{  $k + 1 }}</strong>
+                                <div class="dominaturecibo__recibo__puntos punto-anime" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;">
+                                    <strong class="dominaturecibo__recibo__puntos--abrir act">{{  $pos->order }}</strong>
                                     <strong class="dominaturecibo__recibo__puntos--cerrar">x</strong>
                                     <article class="dominaturecibo__recibo__puntos__contenido">
                                     {!! $pos->descripcion !!}
@@ -68,7 +68,7 @@
                                 <img class="dominaturecibo__recibo__imagen" src="/storage/{{ $invoice->imagen }}" alt="">
                                 @foreach($invoice->positions as $k => $pos)
                                     <div class="dominaturecibo__recibo__puntos" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;" data-hash="hoja{{ $key + 1}}-{{ $k + 1}}">
-                                        <strong class="dominaturecibo__recibo__puntos--abrir act">{{  $k + 1 }}</strong>
+                                        <strong class="dominaturecibo__recibo__puntos--abrir act">{{  $pos->order }}</strong>
                                     </div>
                                @endforeach  
                         </div>
