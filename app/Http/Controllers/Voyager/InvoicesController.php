@@ -341,14 +341,23 @@ class InvoicesController extends VoyagerBaseController
    
     public function setpoints(Request $request)
     {
-        $reg = Position::where('invoice_item_id',$request->invoice_item_id)->delete();
-        $box = Layer::where('invoice_item_id',$request->invoice_item_id)->delete();
-
         $latx = Input::get('posx');
         $laty = Input::get('posy');
         $description = Input::get('punto');
+        $order = Input::get('order');
+      
+        if(intval($latx[0])==0){
+            return response()->json(['rpta'=>'error','mensaje'=>'Ubique el punto creado para obtener cordenadas']);
+        }
 
+        $reg = Position::where('invoice_item_id',$request->invoice_item_id)->delete();
+        $box = Layer::where('invoice_item_id',$request->invoice_item_id)->delete();
+
+        
+
+       
         //layer
+
         $bx = Input::get('bx');
         $by = Input::get('by');
         $bwidth = Input::get('bwidth');
@@ -359,7 +368,7 @@ class InvoicesController extends VoyagerBaseController
             $invoice->mobile = $request->esmovil;
             $invoice->save();
         }
-
+    if($latx){
        if(count($latx)>1){
         foreach($latx as $key=>$n){
             
@@ -368,6 +377,7 @@ class InvoicesController extends VoyagerBaseController
             $point->latx = $latx[$key];
             $point->laty = $laty[$key];
             $point->descripcion = $description[$key];
+            $point->order = $order[$key];
             $point->save();
         
         }
@@ -377,9 +387,13 @@ class InvoicesController extends VoyagerBaseController
             $point->latx = $latx[0];
             $point->laty = $laty[0];
             $point->descripcion = $description[0];
+            $point->order = $order[0];
             $point->save();
        }
-    if(count($bx)>0){
+    }else{
+        return response()->json(['rpta'=>'error','mensaje'=>'Ingrese un punto de referencia']);
+    }
+    if($bx){
        if(count($bx)>1){
             foreach($bx as $key=>$p)
             {
@@ -404,7 +418,7 @@ class InvoicesController extends VoyagerBaseController
         }
     }
         //Position::create([$arrData]);  
-        return response()->json(['success'=>'Carga completa']);
+        return response()->json(['rpta'=>'ok']);
     }
 
     public function updateinvoice(Request $request, $id){
@@ -418,11 +432,11 @@ class InvoicesController extends VoyagerBaseController
     public function borrarpunto($id){
         $punto = Position::find($id);
         $punto->delete();
-        response()->json(['rpta'=>'ok']);
+        return response()->json(['rpta'=>'ok']);
     }
     public function borrarcapa($id){
         $capa = Layer::find($id);
         $capa->delete();
-        response()->json(['rpta'=>'ok']);
+        return response()->json(['rpta'=>'ok']);
     }
 }

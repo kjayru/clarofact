@@ -10,14 +10,14 @@
      @handheld
      <section class="sliderPrincipal bgCover" style="background-image: url( storage/{{ $sli->slideritems[1]->imagen }});">
      @endhandheld
-            <div class="limit">
+            <div class="limit slides-conoce">
                 <article class="sliderPrincipal__texto">
                     <strong> {{ $sli->slideritems[$k]->title }} </strong><br>
              {!! $sli->slideritems[$k]->content !!}
                 </article>
                 <aside class="sliderPrincipal__texto--mobile">
                     <strong>{{ $sli->slideritems[$k]->title }} </strong><br>
-                    <a href="/conoce-tu-recibo">{{ strip_tags($sli->slideritems[$k]->content) }}</a>
+                    <a href="{{ $sli->slideritems[$k]->url }}">{{ strip_tags($sli->slideritems[$k]->content) }}</a>
                 </aside>
             </div>
         </section>

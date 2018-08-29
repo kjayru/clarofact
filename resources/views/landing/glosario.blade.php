@@ -8,16 +8,16 @@
 
             <ul class="pagina__breadcrumb limit">
                 <li><a href="/">Inicio</a></li>/
-                <li>Glosario</li>/
+                <li>Glosario de facturación</li>/
                 <li>{{strtoupper($pag)}}</li>
             </ul>
             <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
                 <li><a href="/">Inicio</a></li>/
-                <li>Glosario</li>
+                <li>Glosario de facturación</li>
             </ul>
             
             <div class="limit" id="secc-L">
-                <h2 class="pagina__titulo">Glosario</h2>
+                <h2 class="pagina__titulo">Glosario de facturación</h2>
                 <article class="glosario__listaContenedor">
                     <img class="glosario__listaContenedor__flecha glosario__left" src="img/calendario-left.png" alt="" />
                     <ul class="glosario__lista">

@@ -7,38 +7,34 @@
                
          
             <ul class="pagina__breadcrumb limit">
-               
-                <li><a href="/{{$path1->slug}}"><img src="/img/arrow.svg" alt="{{$path1->name }}"></a></li>/
-                <li>{{ $path2->name  }}</li>
+                <li><a href="/">Inicio</a></li>/
+                <li>cómo leer tu recibo móvil</li>             
             </ul>
+            
             <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
-               
-                <li><a href="/{{$path1->slug}}"><img src="/img/arrow.svg" alt="{{$path1->name }}"></a></li>/
-             
-                <li>{{ $path2->name  }}</li>
+                <li><a href="/">Inicio</a></li>/
+                <li>cómo leer tu recibo móvil</li>
             </ul>
        
 
        
 
-            <div class="addtext thetitle limit">
-                    {!! @$datos->body !!}
-                 </div>  
+            <h2 class="pagina__titulo pagina__titulo--miclaro">¿Cómo leer tu recibo móvil?</h2>
             
             <div class="dominaturecibo">
                 <ul class="dominaturecibo__opciones">
+                    
                 @foreach($recibos as $key => $recibo)
                     
-                    <li><a href="/{{ $path }}/{{ $recibo->slug }}" 
-                        @if($recibo->slug== $pag)
-                        class="act"
-                        @endif
-                        >Hoja {{ $key +1 }}</a></li>
+                    <li>
+                        <a href="/conoce-tu-recibo/{{ $recibo->slug }}" @if($recibo->slug == $pag) class="act" @endif >  Hoja {{ $key +1 }}</a>
+                    </li>
                   
                  @endforeach
                 </ul>
                
             @foreach($invoices as $key => $invoice) 
+            
               @if($invoice->mobile==0)
                 <div class="hoja hoja{{ $key + 1}} act">
                     <div class="dominaturecibo__contenido">
@@ -46,7 +42,7 @@
                                 <img class="dominaturecibo__recibo__imagen" src="/storage/{{ $invoice->imagen }}" alt="">
                                 @foreach($invoice->positions as $k => $pos)
                                 <div class="dominaturecibo__recibo__puntos" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;">
-                                    <strong class="dominaturecibo__recibo__puntos--abrir act">{{  $pos->order }}</strong>
+                                    <strong class="dominaturecibo__recibo__puntos--abrir act">{{ $pos->order }}</strong>
                                     <strong class="dominaturecibo__recibo__puntos--cerrar">x</strong>
                                     <article class="dominaturecibo__recibo__puntos__contenido">
                                     {!! $pos->descripcion !!}
@@ -72,7 +68,7 @@
                                 <img class="dominaturecibo__recibo__imagen" src="/storage/{{ $invoice->imagen }}" alt="">
                                 @foreach($invoice->positions as $k => $pos)
                                     <div class="dominaturecibo__recibo__puntos" style="top:{{ $pos->laty }}px; left:{{ $pos->latx }}px;" data-hash="hoja{{ $key + 1}}-{{ $k + 1}}">
-                                        <strong class="dominaturecibo__recibo__puntos--abrir act">{{  $pos->order }}</strong>
+                                        <strong class="dominaturecibo__recibo__puntos--abrir act">{{ $pos->order }}</strong>
                                     </div>
                                @endforeach  
                         </div>
@@ -91,9 +87,7 @@
                 @endif
             @endforeach
             </div>
-            <div class="addtext thejustify limit">
-                    {!! @$datos->body_bottom !!}
-            </div>
+
         </section>
 
         <div class="puntoFooter"></div>

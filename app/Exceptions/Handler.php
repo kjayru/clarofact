@@ -48,6 +48,19 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
+
+      
+        if($exception instanceof validationException){
+            return $this->convertValidationExceptionToResponse($exception, $request);
+            
+
+        }
+
+        if($exception instanceof ModelNotFoundException)
+        {
+            $modelo = strtolower(class_basename($exception->getModel()));
+            return $this->errorResponse("no existe la pagina",404);
+        }
         return parent::render($request, $exception);
     }
 }

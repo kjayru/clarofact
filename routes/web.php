@@ -1,16 +1,16 @@
 <?php
 Route::get('/','LandingController@show');
-Route::get('/conoce-tu-recibo','ConoceController@index');
-Route::get('/conoce-tu-recibo/{slug}','ConoceController@show');
+Route::get('/como-leer-tu-recibo-movil','ConoceController@index');
+Route::get('/como-leer-tu-recibo-movil/{slug}','ConoceController@show');
 
 Route::get('/que-te-paso-este-mes','QuetepasoController@index');
 Route::get('/que-te-paso-este-mes/{slug}', 'QuetepasoController@show');
 
 Route::get('/simulador-de-facturacion','SimuladorController@index');
 Route::get('/lugares-de-pago','LugaresController@index');
-Route::get('/glosario','GlosarioController@index');
-Route::get('/glosario/{slug}','GlosarioController@show');
-Route::get('/recibo-por-email','ReciboEmailController@index');
+Route::get('/glosario-de-facturacion','GlosarioController@index');
+Route::get('/glosario-de-facturacion/{slug}','GlosarioController@show');
+Route::get('/que-es-el-recibo-por-email','ReciboEmailController@index');
 Route::get('/dudas-y-preguntas-frecuentes','PreguntasController@index');
 Route::get('/lugares-de-pago/bancos/{slug}','LugaresController@show');
 Route::get('/lugares-de-pago/{slug}','LugaresController@bancos');

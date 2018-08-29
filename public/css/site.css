@@ -986,7 +986,8 @@ img{
     font-weight:300;
     padding-bottom:25px;
     text-align:center;
-    font-size:30px
+    font-size:30px;
+    padding-top: 30px;
 }
 .pagina__titulo b{
     font-weight:500
@@ -1016,11 +1017,12 @@ img{
 .pagina__subtitulo strong{
     font-weight:700
 }
-.lineanuevapost_main{
-    max-width:900px;
-    width:100%;
-    margin:0 auto
-}
+.lineanuevapost_main {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 50px;
+  }
 .lineanuevapost_main .box_content{
     max-width:820px;
     width:100%;
@@ -1092,6 +1094,10 @@ img{
     margin:10px 0;
     border-radius:5px
 }
+
+
+/**modificacion 28/08**/
+
 .lineanuevapost_main h4{
     font-size:18px;
     font-weight:400;
@@ -1130,6 +1136,30 @@ img{
     font-weight:500;
     padding-bottom:5px
 }
+
+.lineanuevapost__list-letters {
+    color: #000;
+  }
+  .lineanuevapost__list-letters .enlace {
+    color: #1f96ad;
+    text-decoration: none;
+  }
+  .lineanuevapost__list-letters .enlace:hover {
+    text-decoration: underline;
+  }
+  .lineanuevapost__list-letters li {
+    font-size: 16px;
+    padding-bottom: 10px;
+    list-style-type: lower-alpha;
+    font-weight: 700;
+  }
+  .lineanuevapost__list-letters li strong {
+    display: block;
+    font-weight: 500;
+    padding-bottom: 5px;
+  }
+
+
 .lineanuevapost_listlink{
     color:#000;
     margin-top:40px;
@@ -1157,13 +1187,15 @@ img{
 .lineanuevapost_listlink li p{
     color:#4a4a4a;
     font-size:18px;
-    font-weight:700
+    font-weight:400
 }
 @media screen and (max-width:425px){
     .lineanuevapost_listlink li p{
         font-size:14px
     }
 }
+
+
 .ico_arrow2{
     position:absolute;
     right:10px;
@@ -2093,6 +2125,10 @@ img{
     width:100%;
     max-width:458px
 }
+
+/**modificacion 28/08**/
+
+
 .dominaturecibo__recibo__puntos{
     width:26px;
     height:26px;
@@ -2113,7 +2149,9 @@ img{
     z-index:1;
     -webkit-transition:background ease 0.25s;
     -o-transition:background ease 0.25s;
-    transition:background ease 0.25s
+    transition:background ease 0.25s;
+    animation:puntoanime 2s infinite linear;
+    -webkit-animation:puntoanime 2s infinite linear
 }
 .dominaturecibo__recibo__puntos:hover{
     background:#e06d10
@@ -2129,6 +2167,17 @@ img{
     background:#da252c;
     z-index:2
 }
+@-webkit-keyframes puntoanime{
+    0%{
+        -webkit-transform:scale(0.9)
+    }
+    50%{
+        -webkit-transform:scale(1)
+    }
+    to{
+        -webkit-transform:scale(0.9)
+    }
+}
 .dominaturecibo__recibo__puntos__contenido{
     background:#da252c;
     color:#fff;
@@ -2142,7 +2191,6 @@ img{
     top:50%;
     left:30px;
     display:none;
-    font-weight: lighter;
     -webkit-transform:translate(0, -50%);
     -ms-transform:translate(0, -50%);
     transform:translate(0, -50%)
@@ -2163,6 +2211,8 @@ img{
     width:100%;
     height:120px
 }
+
+
 .videoClickFull{
     position:relative;
     display:inline-block

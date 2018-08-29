@@ -7,10 +7,10 @@
 <section class="sliderSecundario bgCover">
     <div class="limit">
             <article class="sliderSecundario__texto">
-                    <strong>Recibo por email</strong>
+                    <strong>¿Qué es el recibo por email?</strong>
             </article>
             <aside class="sliderSecundario__texto--mobile">
-                    <strong>Recibo por email</strong>
+                    <strong>¿Qué es el recibo por email?</strong>
             </aside>
     </div>
 </section>
@@ -20,11 +20,11 @@
 
     <ul class="pagina__breadcrumb limit">
         <li><a href="/">Inicio</a></li>/
-            <li>Recibo por email</li>
+            <li>Qué es el recibo por email</li>
     </ul>
     <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
         <li><a href="/">Inicio</a></li>/
-            <li>Recibo por email</li>
+            <li>Qué es el recibo por email</li>
     </ul>
 </section>
 
