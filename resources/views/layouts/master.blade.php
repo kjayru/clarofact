@@ -19,7 +19,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="/css/normalize.css">
         <link rel="stylesheet" href="/css/main.css">
-        <link rel="stylesheet" href="/css/site.css?v={{ date('Mdhms') }}">
+        <link rel="stylesheet" href="/css/site.css?v={{ date('dhms') }}">
         <link rel="stylesheet" href="/css/site-mobile.css?v={{ date('Mdhms') }}">
         <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 

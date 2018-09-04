@@ -7,9 +7,12 @@
      @desktop 
         <section class="sliderPrincipal bgCover" style="background-image: url( storage/{{ $sli->slideritems[0]->background }});">
      @enddesktop
-     @handheld
+     @tablet
+     <section class="sliderPrincipal bgCover" style="background-image: url( storage/{{ $sli->slideritems[0]->background }});">
+     @endtablet
+     @mobile
      <section class="sliderPrincipal bgCover" style="background-image: url( storage/{{ $sli->slideritems[1]->imagen }});">
-     @endhandheld
+     @endmobile
             <div class="limit slides-conoce">
                 <article class="sliderPrincipal__texto">
                     <strong> {{ $sli->slideritems[$k]->title }} </strong><br>

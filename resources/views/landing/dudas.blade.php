@@ -11,19 +11,19 @@
 
 	<ul class="pagina__breadcrumb limit">
 			<li><a href="/">Inicio</a></li>/
-			<li>¿Dudas sobre tu facturación?</li>
+			<li>¿Dudas sobre tu recibo?</li>
 	</ul>
 	<ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
 			<li><a href="/">Inicio</a></li>/
-			<li>¿Dudas sobre tu facturación?</li>
+			<li>¿Dudas sobre tu recibo?</li>
 	</ul>
 
 	<div class="limit">
 
 		<div class="lineanuevapost_main">
 
-			<h2 class="pagina__titulo">¿Dudas sobre tu facturación?</h2>
-			<h4>Te explicamos todo sobre tu recibo</h4>
+			<h2 class="pagina__titulo">¿Dudas sobre tu recibo?</h2>
+			<h4>Sabemos lo importante que es entender tu recibo. Por eso recogimos los casos más<br> comunes sobre facturación y te los explicamos paso a paso.   </h4>
 			
 			<div class="box_content">
 				<div class="box1">

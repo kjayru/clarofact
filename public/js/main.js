@@ -551,12 +551,12 @@ box1.style.cursor = "pointer";
 box2.style.cursor = "pointer";
 
 box1.addEventListener('click',function(){
-   let url =  box1.dataset.rel;
+   let url =  "/linea-nueva-postpago";
    window.location.href = url;
 });
 
 box2.addEventListener('click',function(){
-    let url =  box2.dataset.rel;
+    let url = "/dudas-sobre-tu-facturacion";
     window.location.href = url;
  });
 
