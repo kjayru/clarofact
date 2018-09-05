@@ -547,8 +547,7 @@ function footer() {
 let box1 = document.querySelector(".box_qp1");
 let box2 = document.querySelector(".box_qp2");
 
-box1.style.cursor = "pointer";
-box2.style.cursor = "pointer";
+
 
 box1.addEventListener('click',function(){
    let url =  "/linea-nueva-postpago";
@@ -577,3 +576,9 @@ function activeAnimation(element)
     $(element).css("animation", "puntoanime 2s infinite linear");
     $(element).css("-webkit-animation", "puntoanime 2s infinite linear");
 }
+$(document).ready(function(){
+    $("#urlhomemobile").on('click',function(){
+        console.log("eentos");
+        window.location.href="/como-leer-tu-recibo-movil";
+    });
+});

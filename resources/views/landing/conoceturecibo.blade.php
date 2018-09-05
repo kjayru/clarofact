@@ -20,7 +20,7 @@
        
 
             <h2 class="pagina__titulo pagina__titulo--miclaro">¿Cómo leer tu recibo móvil?</h2>
-            
+            <p style="text-align:center; padding-bottom: 25px;">Haz clic en los círculos para conocer cada sección del recibo</p>
             <div class="dominaturecibo">
                 <ul class="dominaturecibo__opciones">
                     

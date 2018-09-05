@@ -18,7 +18,7 @@
     </ul>
 
     <h2 class="pagina__titulo"><img src="/img/deayuda_lugares.png" alt="Lugares de pago" /> Lugares de Pago</h2>
-
+    <p style="text-align:center;">Conoce los canales disponibles para realizar el pago de tu recibo</p>
     <div class="limit">
         <ul class="lugaresdepago__opciones">
            
