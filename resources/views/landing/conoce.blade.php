@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="espacioHeader"></div>
-        <section class="pagina">
+        <section class="pagina {{ $path1->slug }}">
                
          @if($elementos==2)
-            <ul class="pagina__breadcrumb limit">
+            <ul class="pagina__breadcrumb limit nivel-2">
                
                 <li><a href="/{{$path1->slug}}"><img src="/img/arrow.svg" alt="{{$path1->name }}"></a></li>/
                 <li>{{ $path2->name  }}</li>
@@ -20,14 +20,14 @@
         @endif
 
         @if($elementos>=3)
-            <ul class="pagina__breadcrumb limit">
+            <ul class="pagina__breadcrumb limit nivel-3">
               
-                <li><a href="/{{$path1->slug}}/{{$path2->slug}}"><img src="/img/arrow.svg" alt="{{$path2->name }}"></a></li>/
+                <li><a href="/{{$path1->slug}}"><img src="/img/arrow.svg" alt="{{$path2->name }}"></a></li>/
                 <li>{{ $path3->name  }}</li>
             </ul>
             <ul class="pagina__breadcrumb pagina__breadcrumb--mobile limit">
                    
-                    <li><a href="/{{$path1->slug}}/{{$path2->slug}}"><img src="/img/arrow.svg" alt="{{$path2->name }}"></a></li>/
+                    <li><a href="/{{$path1->slug}}"><img src="/img/arrow.svg" alt="{{$path2->name }}"></a></li>/
                     <li>{{ $path3->name  }}</li>
                 </ul>
         @endif

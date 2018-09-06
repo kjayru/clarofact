@@ -6,7 +6,7 @@
         <section class="pagina">
                
          
-            <ul class="pagina__breadcrumb limit">
+            <ul class="pagina__breadcrumb limit nivel-1">
                
                 <li><a href="/{{$path1->slug}}"><img src="/img/arrow.svg" alt="{{$path1->name }}"></a></li>/
                 <li>{{ $path2->name  }}</li>

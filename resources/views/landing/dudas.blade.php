@@ -23,9 +23,10 @@
 		<div class="lineanuevapost_main">
 
 			<h2 class="pagina__titulo">¿Dudas sobre tu recibo?</h2>
-			<h4>Sabemos lo importante que es entender tu recibo. Por eso recogimos los casos más<br> comunes sobre facturación y te los explicamos paso a paso.   </h4>
 			
-			<div class="box_content">
+			<p class="legal">Sabemos lo importante que es entender tu recibo. Por eso recogimos los casos más<br>
+				comunes sobre facturación y te los explicamos paso a paso.</p>
+			<!--<div class="box_content">
 				<div class="box1">
 					<div class="img_box1"></div>
 				</div>
@@ -33,23 +34,53 @@
 				<div class="box2">
 					<div class="content_box2">
 					
-					@foreach ($categorias as $cat)
-							
 
-						<a href="{{ $path }}/{{$cat->slug}}">
+						<a href="">
 							<div class="text_box2">
 								<i class="ico_arrow2"></i>
-								<p>{{$cat->name}}</p>
+								<p></p>
 							</div>
 						</a>
 						
 
-					@endforeach
+					
 
+					</div>
+				</div>
+			</div>-->
+
+			<!--implementation 05/09-->
+			<div class="facturation">
+				<div class="facturation__image"></div>
+				<div class="facturation__options">
+				  <div class="facturation__align">
+					<div class="facturation__content">
+					  <div class="facturation__list">
+						<ul>
+						@foreach ($categorias as $key => $cat)
+						@if($key==0)
+						  <li data-id="{{ $key }}">
+							<h3>{{$cat->name}}<span></span></h3>
+							<div>
+								@foreach($subcategorias as $sub)
+								<a href="{{ $path }}/{{$pathslug}}/{{$sub->slug}}">{{ $sub->name }}</a>
+								@endforeach
+							</div>
+						  </li>
+						@else
+						  <li>
+							<h3><a href="{{ $path }}/{{$cat->slug}}">{{$cat->name}}</a><span></span></h3>
+						  </li>
+						@endif
+						@endforeach
+						</ul>
 					</div>
 				</div>
 			</div>
 
+
+				</div>
+			</div>
 		</div>
 
 	</div>

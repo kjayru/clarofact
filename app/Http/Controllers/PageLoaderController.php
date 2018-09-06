@@ -37,12 +37,17 @@ class PageLoaderController extends Controller
                             $parent = Category::where('slug',$categories[$i-1])->first();  
                             $parent_id = $parent->id;
                             $categorias = Category::where('parent_id',$parent_id)->orderby('order','asc')->get();
+                           //slug for accordions
+                            $slugs  = Category::where('id',10)->first();
+                            $subcategorias = Category::where('parent_id',10)->orderby('order','asc')->get();
+                            $pathslug = $slugs->slug;
 
                             if(count($categorias)>0){
 
                                 switch($countSeg){
-                                    case 1: 
-                                    return view('landing.dudas',['categorias'=>$categorias,'path'=>$path]);
+                                    case 1:
+                                   
+                                    return view('landing.dudas',['categorias'=>$categorias,'path'=>$path,'pathslug'=>$pathslug,'subcategorias'=>$subcategorias]);
                                     break;
 
                                     case 2:
@@ -56,6 +61,7 @@ class PageLoaderController extends Controller
                             
                             
                             }else{
+                             
                                 //vista inicial recibo
                                     @$path1 = Category::where('slug',$categories[0])->first();
                                     @$path2 = Category::where('slug',$categories[1])->first();
@@ -101,7 +107,8 @@ class PageLoaderController extends Controller
                                     
                             }
                         }else{
-                            ///slug segundo nivle
+                           
+                            ///slug segundo nivel
                                 @$path1 = Category::where('slug',$categories[0])->first();
                                 @$path2 = Category::where('slug',$categories[1])->first();
                                 @$path3 = Category::where('slug',$categories[2])->first();
@@ -141,6 +148,7 @@ class PageLoaderController extends Controller
                     }
                 }
             }else{
+                
                 //vista recibos
                 @$path1 = Category::where('slug',$categories[0])->first();
                 @$path2 = Category::where('slug',$categories[1])->first();

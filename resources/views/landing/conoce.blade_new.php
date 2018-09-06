@@ -38,13 +38,7 @@
                 <ul class="dominaturecibo__opciones">
                 @foreach($recibos as $key => $recibo)
                     
-                    <li><a href="/{{ $path }}/{{ $recibo->slug }}" 
-                        @if($recibo->slug == $pag)
-                        class="act"
-                        @endif
-
-                       
-                        >Hoja {{ $key +1 }}</a></li>
+                    <li><a href="/{{ $path }}/{{ $recibo->slug }}" @if($recibo->slug == $pag) class="act" @endif >Hoja {{ $key +1 }}</a></li>
                   
                  @endforeach
                 </ul>
