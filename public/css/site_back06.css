@@ -3106,8 +3106,26 @@ img {
 }
 
 
+.lineanuevapost_main .facturation__list ul li:nth-of-type(1) h3 span,
+.lineanuevapost_main .facturation__list ul li:nth-of-type(1) h3 i {
+  display: table-cell;
+  width: 20px;
+  vertical-align: middle;
+  text-align: right;
+}
+@media screen and (max-width: 425px) {
+  .lineanuevapost_main .facturation__list ul li:nth-of-type(1) h3 span,
+  .lineanuevapost_main .facturation__list ul li:nth-of-type(1) h3 i {
+    width: 20px;
+  }
+}
 .lineanuevapost_main .facturation__list ul li:nth-of-type(1) h3 span:before,
 .lineanuevapost_main .facturation__list ul li:nth-of-type(1) h3 i:before {
+  content: "";
+  background: url("../img/flecha1-derecha.svg") no-repeat center center;
+  display: block;
+  width: 20px;
+  height: 16px;
   -webkit-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
@@ -3128,38 +3146,6 @@ img {
 .lineanuevapost_main .facturation__list ul li h3 a {
   color: #fff;
 }
-@media screen and (max-width: 1025px) {
-  .lineanuevapost_main .facturation__list ul li h3 {
-    font-size: 17px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .lineanuevapost_main .facturation__list ul li h3 {
-    font-size: 16px;
-  }
-}
-.lineanuevapost_main .facturation__list ul li h3 span,
-.lineanuevapost_main .facturation__list ul li h3 i {
-  display: table-cell;
-  width: 20px;
-  vertical-align: middle;
-  text-align: right;
-}
-@media screen and (max-width: 425px) {
-  .lineanuevapost_main .facturation__list ul li h3 span,
-  .lineanuevapost_main .facturation__list ul li h3 i {
-    width: 20px;
-  }
-}
-.lineanuevapost_main .facturation__list ul li h3 span:before,
-.lineanuevapost_main .facturation__list ul li h3 i:before {
-  content: "";
-  background: url("../img/flecha1-derecha.svg") no-repeat center center;
-  display: block;
-  width: 20px;
-  height: 16px;
-}
-
 
 
 

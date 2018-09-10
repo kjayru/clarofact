@@ -99,7 +99,7 @@ $(document).on("ready", function() {
   //code 05/09
   var facturation = Array.apply(
     null,
-    document.querySelectorAll(".facturation__list ul li h3")
+    document.querySelectorAll(".facturation__list ul li h3.links")
   );
   facturation.filter(function(element, index) {
     

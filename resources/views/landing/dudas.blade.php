@@ -23,7 +23,7 @@
 		<div class="lineanuevapost_main">
 
 			<h2 class="pagina__titulo">¿Dudas sobre tu recibo?</h2>
-			
+			 
 			<p class="legal">Sabemos lo importante que es entender tu recibo. Por eso recogimos los casos más<br>
 				comunes sobre facturación y te los explicamos paso a paso.</p>
 			<!--<div class="box_content">
@@ -60,7 +60,7 @@
 						@foreach ($categorias as $key => $cat)
 						@if($key==0)
 						  <li data-id="{{ $key }}">
-							<h3>{{$cat->name}}<span></span></h3>
+							<h3 class="links"><a>{{$cat->name}}<span></span></a></h3>
 							<div>
 								@foreach($subcategorias as $sub)
 								<a href="{{ $path }}/{{$pathslug}}/{{$sub->slug}}">{{ $sub->name }}</a>
@@ -69,7 +69,7 @@
 						  </li>
 						@else
 						  <li>
-							<h3><a href="{{ $path }}/{{$cat->slug}}">{{$cat->name}}</a><span></span></h3>
+							<h3><a href="{{ $path }}/{{$cat->slug}}">{{$cat->name}}<span></span></a></h3>
 						  </li>
 						@endif
 						@endforeach
