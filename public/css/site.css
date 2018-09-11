@@ -3119,17 +3119,17 @@ img {
   font: normal 500 20px 'Roboto';
   color: #fff;
   cursor: pointer;
-  display: table;
-  background: #f08224;
-  padding: 23px 4.5%;
-  border-radius: 10px;
-  width: 91%;
   letter-spacing: -0.4px;
 /*&:hover
 						color #723707*/
 }
 .lineanuevapost_main .facturation__list ul li h3 a {
-  color: #fff;
+    background: #f08224;
+    border-radius: 10px;
+    width: 91%;
+    padding: 23px 4.5%;
+    color: #fff;
+    display:table;
 }
 @media screen and (max-width: 1025px) {
   .lineanuevapost_main .facturation__list ul li h3 {

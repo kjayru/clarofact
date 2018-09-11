@@ -27,7 +27,7 @@
 		
 										<p class="lineanuevapost__texto">¡Bienvenido! ahora que cuentas un plan postpago debes saber que todos los meses, al inicio de tu ciclo mensual, se renovará el saldo de tu plan (minutos, megas, SMS, otros) y se emitirá tu factura, y tendrás para pagarla hasta unos días después.
 											<br><br>
-											Debes saber que puedes elegir un límite de consumo para tu línea. Solicita el que más de adecue a tus necesidades:
+											Puedes elegir un límite de consumo para tu línea. Solicita el que más de adecue a tus necesidades:
 			
 											</p>
 		
