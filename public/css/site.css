@@ -1089,12 +1089,14 @@ img {
     /*font: normal 400 20px 'Roboto';*/
     text-align: center;
     padding-bottom: 30px;
+    font-size: 16px;
 }
 @media screen and (max-width: 425px) {
     .lineanuevapost_main .legal {
       font-size: 18px;
     }
   }
+
 .text_box2 {
   display: inline-block;
   background: #f08224;
@@ -2939,6 +2941,7 @@ img {
   .sliderClaroFacturacion .sliderClaroFacturacion__flecha {
     top: 70px;
   }
+  
 }
 @media screen and (max-width: 370px) {
   .home__quepaso__item {
